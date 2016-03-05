@@ -1,0 +1,28 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$background: url(/images/background.jpg) no-repeat center center fixed;
+$container-dimensions: 50%;
+$container-border: 2px transparent;
+$container-border-radius: 20px;
+$container-color: #f9f9f9;
+
+html {
+    background: $background;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    width: $container-dimensions;
+    height: $container-dimensions;
+    background-color: $container-color;
+    position: absolute;
+    border: $container-border;
+    border-radius: $container-border-radius;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
