@@ -1,9 +1,14 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 $background: url(/images/background.jpg) no-repeat center center fixed;
-$container-dimensions: 50%;
+$container-width: 30%;
+$container-height: 47%;
 $container-border: 2px transparent;
 $container-border-radius: 20px;
 $container-color: #f9f9f9;
+$font-family: 'Palanquin', sans-serif;
+$font-size: 20px;
+$font-weight: 600;
+$margin-top: 1em;
 
 html {
     background: $background;
@@ -14,8 +19,8 @@ html {
 }
 
 .container {
-    width: $container-dimensions;
-    height: $container-dimensions;
+    width: $container-width;
+    height: $container-height;
     background-color: $container-color;
     position: absolute;
     border: $container-border;
@@ -25,4 +30,20 @@ html {
     left: 0;
     right: 0;
     margin: auto;
+    .option {
+        margin-top: $margin-top;
+        font-size: $font-size;
+        font-weight: $font-weight;
+    }
+    .login-redirect, .register-redirect {
+        position: relative;
+    }
+    .login-redirect {
+        margin: 2.5em;
+    }
+}
+
+.login-redirect, .register-redirect, .option {
+    text-align: center;
+    font-family: $font-family;
 }
