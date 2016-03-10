@@ -11,13 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'login', function () {
-    return view('login');
-}]);
 
-Route::get('/register', ['as' => 'register', function () {
-    return view('register');
-}]);
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +24,16 @@ Route::get('/register', ['as' => 'register', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', ['as' => 'login', function () {
+        return view('login');
+    }]);
+
+    Route::get('/register', ['as' => 'register', function () {
+        return view('register');
+    }]);
+
+    Route::get('/home', 'HomeController@index');
 });
