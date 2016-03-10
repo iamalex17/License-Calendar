@@ -8,7 +8,7 @@
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" name="name" class="form-control" id="email" placeholder="Email" required="required">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
                 @if ($errors->has('name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>

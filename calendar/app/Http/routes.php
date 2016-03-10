@@ -35,5 +35,5 @@ Route::group(['middleware' => 'web'], function () {
         return view('register');
     }]);
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/dashboard', 'HomeController@index');
 });
