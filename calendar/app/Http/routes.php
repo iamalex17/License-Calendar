@@ -35,5 +35,7 @@ Route::group(['middleware' => 'web'], function () {
         return view('auth.register');
     }]);
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/dashboard', ['as' => 'dashboard', function () {
+        return view('auth.dashboard');
+    }]);
 });
