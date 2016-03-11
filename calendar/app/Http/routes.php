@@ -11,7 +11,7 @@
 |
 */
 
-
+// routes that don't require login
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +28,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', ['as' => 'login', function () {
-        return view('login');
+        return view('auth.login');
     }]);
 
     Route::get('/register', ['as' => 'register', function () {
-        return view('register');
+        return view('auth.register');
     }]);
 
-    Route::get('/dashboard', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
 });
