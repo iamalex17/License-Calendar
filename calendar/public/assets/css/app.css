@@ -1,5 +1,5 @@
 html {
-  background: url(/images/background.jpg) no-repeat center center fixed;
+  background: url(/assets/images/background.jpg) no-repeat center center fixed;
   background-size: cover; }
 
 .container {
@@ -14,10 +14,14 @@ html {
   left: 0;
   right: 0;
   margin: auto; }
+  .container .jumbotron {
+    background-color: transparent; }
   .container .option {
     margin-top: 1em;
     font-size: 20px;
     font-weight: 600; }
+  .container .help-block {
+    margin: 0; }
   .container .login-redirect, .container .register-redirect {
     position: relative; }
   .container .login-redirect {

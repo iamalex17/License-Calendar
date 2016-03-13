@@ -11,13 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'login', function () {
-    return view('login');
-}]);
-
-Route::get('/register', ['as' => 'register', function () {
-    return view('register');
-}]);
+// routes that don't require login
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +24,18 @@ Route::get('/register', ['as' => 'register', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', ['as' => 'login', function () {
+        return view('auth.login');
+    }]);
+
+    Route::get('/register', ['as' => 'register', function () {
+        return view('auth.register');
+    }]);
+
+    Route::get('/dashboard', ['as' => 'dashboard', function () {
+        return view('auth.dashboard');
+    }]);
 });

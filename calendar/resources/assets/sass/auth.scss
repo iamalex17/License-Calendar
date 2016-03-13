@@ -1,5 +1,5 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-$background: url(/images/background.jpg) no-repeat center center fixed;
+$background: url(/assets/images/background.jpg) no-repeat center center fixed;
 $container-width: 30%;
 $container-height: 47%;
 $container-border: 2px transparent;
@@ -30,10 +30,16 @@ html {
     left: 0;
     right: 0;
     margin: auto;
+    .jumbotron {
+        background-color: transparent;
+    }
     .option {
         margin-top: $margin-top;
         font-size: $font-size;
         font-weight: $font-weight;
+    }
+    .help-block {
+        margin: 0;
     }
     .login-redirect, .register-redirect {
         position: relative;
