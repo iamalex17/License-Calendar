@@ -11,56 +11,23 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
-                    <span class="caret"></span></a>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
-                </li>
-            </ul>
-
-
-
-
-
-            <!-- <div class="container"> -->
-
-                <!-- <div class="collapse navbar-collapse" id="app-navbar-collapse"> -->
-                    <!-- Left Side Of Navbar -->
-                    <!-- <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Home</a></li>
-                    </ul> -->
-
-                    <!-- Right Side Of Navbar -->
-                    <!-- <ul class="nav navbar-nav navbar-right"> -->
-                        <!-- Authentication Links -->
-                        <!-- @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="" role="menu">
-                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div> -->
+                    </li>
+                </ul>
+            </div>
         </nav>
-
         @yield('content')
     </body>
 </html>

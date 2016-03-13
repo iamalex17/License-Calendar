@@ -35,7 +35,7 @@
     </form>
     <div class="login-redirect">
         <p>New to Calendar?</p>
-        <a class="register-button btn btn-danger" href="{{ route('register') }}">REGISTER</a>
+        <a class="register-button btn btn-danger" href="{{ url('register') }}">REGISTER</a>
     </div>
 </div>
 @endsection
