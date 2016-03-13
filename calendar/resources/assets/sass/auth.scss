@@ -30,6 +30,9 @@ html {
     left: 0;
     right: 0;
     margin: auto;
+    .jumbotron {
+        background-color: transparent;
+    }
     .option {
         margin-top: $margin-top;
         font-size: $font-size;
