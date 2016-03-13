@@ -11,6 +11,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
+        @if (Auth::guest())
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                In order to access the dashboard, please <a href="{{ url('/') }}">Sign in</a>. Thank you.
+            </div>
+        </div>
+        @else
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-right">
@@ -29,5 +39,6 @@
             </div>
         </nav>
         @yield('content')
+        @endif
     </body>
 </html>
