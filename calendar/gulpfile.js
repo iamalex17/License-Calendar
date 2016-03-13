@@ -13,7 +13,6 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass([
-        'auth.scss',
-        'dashboard.scss',
+        'auth.scss'
     ], 'public/assets/css');
 });
