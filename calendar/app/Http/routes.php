@@ -11,8 +11,6 @@
 |
 */
 
-// routes that don't require login
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,15 +25,18 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', ['as' => 'login', function () {
-        return view('auth.login');
-    }]);
+    Route::get('/', [
+        'as'   => 'login',
+        'uses' => 'LoginController@index',
+    ]);
 
-    Route::get('/register', ['as' => 'register', function () {
-        return view('auth.register');
-    }]);
+    Route::get('/register', [
+        'as'   => 'register',
+        'uses' => 'RegisterController@index',
+    ]);
 
-    Route::get('/dashboard', ['as' => 'dashboard', function () {
-        return view('auth.dashboard');
-    }]);
+    Route::get('/dashboard', [
+        'as'   => 'dashboard',
+        'uses' => 'DashboardController@index',
+    ]);
 });
