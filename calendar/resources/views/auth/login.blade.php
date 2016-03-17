@@ -31,11 +31,12 @@
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">Sign in</button>
             </div>
+            <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
         </div>
     </form>
     <div class="login-redirect">
         <p>New to Calendar?</p>
-        <a class="register-button btn btn-danger" href="{{ url('register') }}">REGISTER</a>
+        <a class="register-button btn btn-danger" href="{{ url('/register') }}">REGISTER</a>
     </div>
 </div>
 @endsection

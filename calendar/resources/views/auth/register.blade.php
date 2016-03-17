@@ -46,7 +46,7 @@
     </form>
     <div class="register-redirect">
         <p>Already use Calendar?</p>
-        <a class="register-button btn btn-danger" href="{{ url('login') }}">SIGN IN</a>
+        <a class="register-button btn btn-danger" href="{{ url('/') }}">SIGN IN</a>
     </div>
 </div>
 @endsection
