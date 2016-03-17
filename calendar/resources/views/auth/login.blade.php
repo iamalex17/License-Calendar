@@ -31,9 +31,10 @@
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">Sign in</button>
             </div>
-            <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
         </div>
     </form>
+    <!-- TODO add forgot password link and rethink design -->
+    <!-- <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a> -->
     <div class="login-redirect">
         <p>New to Calendar?</p>
         <a class="register-button btn btn-danger" href="{{ url('/register') }}">REGISTER</a>
