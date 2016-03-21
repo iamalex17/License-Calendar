@@ -8,7 +8,7 @@
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Email" value="{{ old('email') }}" required="required">
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
@@ -33,9 +33,10 @@
             </div>
         </div>
     </form>
+    <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
     <div class="login-redirect">
         <p>New to Calendar?</p>
-        <a class="register-button btn btn-danger" href="{{ url('register') }}">REGISTER</a>
+        <a class="register-button btn btn-danger" href="{{ url('/register') }}">REGISTER</a>
     </div>
 </div>
 @endsection

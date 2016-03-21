@@ -25,7 +25,11 @@ html {
   .container .login-redirect, .container .register-redirect {
     position: relative; }
   .container .login-redirect {
-    margin: 2.5em; }
+    margin: 1.5em; }
+  .container .padding {
+    padding-top: 3.5em; }
+  .container .btn-link {
+    padding-left: 5em; }
 
 .login-redirect, .register-redirect, .option {
   text-align: center;

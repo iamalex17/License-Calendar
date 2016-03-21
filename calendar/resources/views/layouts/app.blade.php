@@ -6,26 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        @if (Auth::guest())
-        <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
-        @endif
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-        @if (Auth::guest())
-        <div class="container">
-            <div class="jumbotron">
-                <p class="option">WELCOME GUEST</p>
-                <p>
-                    You tried to access the dashboard. In order to do that please
-                    <a href="{{ url('/') }}">Sign in</a>.
-                </p>
-                <p>New to Calendar?</p>
-                <a class="register-button btn btn-danger" href="{{ url('register') }}">REGISTER</a>
-            </div>
-        </div>
-        @else
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-right">
@@ -44,6 +28,5 @@
             </div>
         </nav>
         @yield('content')
-        @endif
     </body>
 </html>
