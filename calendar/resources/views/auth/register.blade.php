@@ -8,7 +8,7 @@
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="full-name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" id="full-name" placeholder="Full name" >
+                <input type="text" name="name" class="form-control" id="full-name" placeholder="Full name" value="{{ old('name') }}" required="required">
                 @if ($errors->has('name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -19,7 +19,7 @@
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" name="email" class="form-control" id="email" placeholder="Email" >
+                <input type="email" name="email" class="form-control" id="email" placeholder="Email" value="{{ old('email') }}" required="required">
                 @if ($errors->has('email'))
                 <span class="help-block">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -30,7 +30,7 @@
         <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
             <label for="password" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" >
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required="required">
                 @if ($errors->has('password'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
