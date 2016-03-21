@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 
-class DashboardController extends Controller
+class LoginController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,16 +15,16 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application login.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('auth.dashboard');
+        return view('auth.login');
     }
 }

@@ -26,14 +26,14 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', [
-        'uses' => 'LoginController@index',
+        'uses' => 'Auth\LoginController@index',
     ]);
 
     Route::get('/register', [
-        'uses' => 'RegisterController@index',
+        'uses' => 'Auth\RegisterController@index',
     ]);
 
     Route::get('/dashboard', [
-        'uses' => 'DashboardController@index',
+        'uses' => 'Dashboard\DashboardController@index',
     ]);
 });
