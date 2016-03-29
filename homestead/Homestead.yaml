@@ -2,8 +2,8 @@
 ip: "192.168.10.10"
 memory: 2048
 cpus: 1
-hostname: calendar
-name: calendar
+hostname: homestead
+name: homestead
 provider: virtualbox
 
 authorize: ~/.ssh/id_rsa.pub
@@ -18,6 +18,8 @@ folders:
 sites:
     - map: calendar.app
       to: "/home/vagrant/www/calendar/public"
+    - map: programareweb.app
+      to: "/home/vagrant/www/programare.web/public"
 
 databases:
     - calendar
