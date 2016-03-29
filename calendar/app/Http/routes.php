@@ -36,4 +36,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard', [
         'uses' => 'Dashboard\DashboardController@index',
     ]);
+
+    Route::get('/profile', [
+        'uses' => 'Dashboard\ProfileController@index',
+    ]);
+
+    Route::get('/settings', [
+        'uses' => 'Dashboard\SettingsController@index',
+    ]);
 });
