@@ -2,7 +2,7 @@
 
 <!-- Main Content -->
 @section('content')
-<div class="container">
+<div class="container container-auth">
     <p class="option">FORGOT YOUR PASSWORD?</p>
     <form class="form-horizontal" method="POST" action="{{ url('/password/email') }}">
         {!! csrf_field() !!}

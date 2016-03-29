@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container">
+<div class="container container-auth">
     <p class="option">RESET PASSWORD</p>
     <form class="form-horizontal" method="POST" action="{{ url('/password/reset') }}">
         {!! csrf_field() !!}

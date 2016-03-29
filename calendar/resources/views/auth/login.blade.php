@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container">
+<div class="container container-auth">
     <p class="option">SIGN IN TO CALENDAR</p>
     <form class="form-horizontal" action="{{ url('/login') }}" method="post">
         {!! csrf_field() !!}
