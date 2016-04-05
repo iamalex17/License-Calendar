@@ -41,6 +41,10 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'Dashboard\ProfileController@index',
     ]);
 
+    Route::post('/update-profile', [
+        'uses' => 'Dashboard\ProfileController@store',
+    ]);
+
     Route::get('/settings', [
         'uses' => 'Dashboard\SettingsController@index',
     ]);

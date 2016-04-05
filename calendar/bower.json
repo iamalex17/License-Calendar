@@ -1,0 +1,10 @@
+{
+    "name": "calendar",
+    "version": "1.0.0",
+    "dependencies": {},
+    "devDependencies": {
+        "fullcalendar": "~2.6.1",
+        "moment": ">=2.5.0",
+        "jquery": "1.9.1 - 2"
+    }
+}

@@ -11,9 +11,17 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass([
-        'auth.scss',
-        'app.scss',
-    ], 'public/assets/css/app.css');
+var bpath = 'node_modules/bootstrap-sass/assets';
+var jqueryPath = 'resources/assets/vendor/jquery';
+
+elixir(function (mix) {
+  mix.sass([
+            'auth.scss',
+            'app.scss',
+        ], 'public/assets/css/app.css')
+     .copy('bower_components/fullcalendar/dist/fullcalendar.min.css', 'public/assets/calendar/')
+     .copy('bower_components/fullcalendar/dist/fullcalendar.min.js', 'public/assets/calendar/')
+     .copy('bower_components/fullcalendar/dist/fullcalendar.print.css', 'public/assets/calendar/')
+     .copy('bower_components/jquery/dist/jquery.min.js', 'public/assets/')
+     .copy('bower_components/moment/min/moment.min.js', 'public/assets/');
 });

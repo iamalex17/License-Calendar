@@ -7,8 +7,13 @@
         <title>Dashboard</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link href="{{ URL('assets/calendar/fullcalendar.min.css') }}" rel="stylesheet">
+        <link href="{{ URL('assets/calendar/fullcalendar.print.css') }}" rel="stylesheet" media='print'>
+        <script type="text/javascript" src="{{ URL('assets/jquery.min.js') }}"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ URL('assets/calendar.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('assets/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('assets/calendar/fullcalendar.min.js') }}"></script>
     </head>
     <body>
         <nav class="navbar navbar-default">
