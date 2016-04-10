@@ -1,6 +1,21 @@
+$color: #333;
+
 .notifications {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
+}
+
+.dropdown-menu {
+    min-width: 143px !important;
+}
+
+.no-underline {
+    color: $color !important;
+    padding: 0 !important;
+}
+
+.no-underline:hover {
+    text-decoration: none;
 }

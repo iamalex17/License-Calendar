@@ -24,9 +24,17 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-                            <li><a href="{{ url('/profile') }}">Profile</a></li>
-                            <li><a href="{{ url('/settings') }}">Settings</a></li>
+                            <!-- <li><a href="{{ url('/dashboard') }}">Dashboard</a></li> -->
+                            <!-- <li><a href="{{ url('/profile') }}">Profile</a></li> -->
+                            <li><a href="#">
+                                <button type="button" class="btn btn-link no-underline" data-toggle="modal" data-target=".modal-profile">Profile</button>
+                            </a>
+                            </li>
+                            <!-- <li><a href="{{ url('/settings') }}">Settings</a></li> -->
+                            <li><a href="#">
+                                <button type="button" class="btn btn-link no-underline" data-toggle="modal" data-target=".modal-settings">Settings</button>
+                            </a>
+                            </li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
@@ -34,6 +42,8 @@
                 </ul>
             </div>
         </nav>
-        @yield('content')
+        @yield('calendar')
+        @yield('profile')
+        @yield('settings')
     </body>
 </html>
