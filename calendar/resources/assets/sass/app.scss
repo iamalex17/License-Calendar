@@ -1,19 +1,24 @@
+$font-weight: 700;
+$margin-bottom: 5px;
 $color: #333;
+$max-width: 100%;
+$min-width: 143px;
+$padding: 0;
 
 .notifications {
     display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
+    max-width: $max-width;
+    margin-bottom: $margin-bottom;
+    font-weight: $font-weight;
 }
 
 .dropdown-menu {
-    min-width: 143px !important;
+    min-width: $min-width !important;
 }
 
 .no-underline {
     color: $color !important;
-    padding: 0 !important;
+    padding: $padding !important;
 }
 
 .no-underline:hover {
