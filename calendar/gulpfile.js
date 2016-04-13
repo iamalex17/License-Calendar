@@ -11,9 +11,6 @@ var elixir = require('laravel-elixir');
  |
  */
 
-var bpath = 'node_modules/bootstrap-sass/assets';
-var jqueryPath = 'resources/assets/vendor/jquery';
-
 elixir(function (mix) {
   mix.sass([
             'auth.scss',
