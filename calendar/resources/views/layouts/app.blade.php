@@ -24,13 +24,10 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!-- <li><a href="{{ url('/dashboard') }}">Dashboard</a></li> -->
-                            <!-- <li><a href="{{ url('/profile') }}">Profile</a></li> -->
                             <li><a href="#">
-                                <button type="button" class="btn btn-link no-underline" data-toggle="modal" data-target=".modal-profile">Profile</button>
+                                <button type="button" class="btn btn-link no-underline" data-toggle="modal" data-target=".modal-account">Account</button>
                             </a>
                             </li>
-                            <!-- <li><a href="{{ url('/settings') }}">Settings</a></li> -->
                             <li><a href="#">
                                 <button type="button" class="btn btn-link no-underline" data-toggle="modal" data-target=".modal-settings">Settings</button>
                             </a>
@@ -43,7 +40,8 @@
             </div>
         </nav>
         @yield('calendar')
-        @yield('profile')
+        @yield('account')
+        @yield('delete-account')
         @yield('settings')
     </body>
 </html>
