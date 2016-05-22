@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -46,8 +48,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request['name']);
-        exit();
+        //
     }
 
     /**
@@ -79,9 +80,27 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if (!Hash::check($request->password, $user->password)) {
+            $request->session()->flash('error', 'Current password does not match');
+            return back();
+        }
+
+        $this->validate($request, [
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6',
+            'newPassword' => 'required|min:6',
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->newPassword);
+
+        $user->save();
+
+        return back();
     }
 
     /**
@@ -90,8 +109,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect('/');
     }
 }
