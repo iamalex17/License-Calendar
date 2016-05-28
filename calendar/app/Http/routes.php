@@ -25,13 +25,16 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/',          'Auth\LoginController@index');
-    Route::get('/register',  'Auth\RegisterController@index');
-    Route::get('/dashboard', 'Dashboard\DashboardController@index');
-    Route::get('/profile',   'Dashboard\ProfileController@index');
+    Route::get('/',         'Auth\LoginController@index');
+    Route::get('register',  'Auth\RegisterController@index');
+    Route::get('dashboard', 'Dashboard\DashboardController@index');
+    Route::get('profile',   'Dashboard\ProfileController@index');
+    Route::get('events',    'Dashboard\EventController@index');
     // Route::get('/settings',  'Dashboard\SettingsController@index');
 
-    Route::put('/profile/{user}', 'Dashboard\ProfileController@update');
+    Route::post('event/{user}', 'Dashboard\EventController@store');
 
-    Route::delete('/profile/{user}', 'Dashboard\ProfileController@destroy');
+    Route::put('profile/{user}', 'Dashboard\ProfileController@update');
+
+    Route::delete('profile/{user}', 'Dashboard\ProfileController@destroy');
 });

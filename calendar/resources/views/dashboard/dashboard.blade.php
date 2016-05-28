@@ -4,7 +4,6 @@
 <div id="calendar"></div>
 @endsection
 
-@section('account')
 <div class="modal-account modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -41,9 +40,7 @@
         </div>
     </div>
 </div>
-@endsection
 
-@section('delete-account')
 <div class="modal-delete-account modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -65,10 +62,8 @@
         </div>
     </div>
 </div>
-@endsection
 
-@section('settings')
-<div class="modal-settings modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+{{-- <div class="modal-settings modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -76,14 +71,14 @@
             </div>
             <div class="modal-body">
                 <!-- modal content -->
-                {{-- <p class="notifications">
+                <p class="notifications">
                     Web Notifications
                 </p>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"> YES
                     </label>
-                </div> --}}
+                </div>
                 <p class="notifications">
                     Email Notifications
                 </p>
@@ -99,5 +94,32 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+<div id="createEvent" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New Event</h4>
+            </div>
+            <form action="/event/{{ Auth::user()->id }}" method="POST">
+                {!! csrf_field() !!}
+                <div class="modal-body">
+                    <input type="text" name="title" class="form-control" id="test" placeholder="Event Title" required="required">
+                    <input type="text" name="start_date" class="form-control" id='startDate' placeholder="Event Start Date" required="required">
+                    <input type="text" name="end_date" class="form-control" id='endDate' placeholder="Event End Date" required="required">
+                    <span>Alert</span>
+                    <select name="alert" class="selectpicker">
+                        <option value="0">At event moment</option>
+                        <option value="1">5 minutes before</option>
+                        <option value="2">10 minutes before</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Undo</button>
+                    <button type="submit" class="btn btn-success">Save event</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-@endsection
