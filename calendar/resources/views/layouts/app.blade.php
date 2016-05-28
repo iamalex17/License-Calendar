@@ -5,15 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard</title>
-        <link href="{{ URL('assets/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ URL('asset/assets/css/app.css') }}" rel="stylesheet">
-        <link href="{{ URL('assets/calendar/fullcalendar.min.css') }}" rel="stylesheet">
-        <link href="{{ URL('assets/calendar/fullcalendar.print.css') }}" rel="stylesheet" media='print'>
-        <script type="text/javascript" src="{{ URL('assets/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ URL('assets/bootstrap.min.js') }}"></script>
-        <script type="text/javascript" src="{{ URL('assets/calendar.js') }}"></script>
-        <script type="text/javascript" src="{{ URL('assets/moment.min.js') }}"></script>
-        <script type="text/javascript" src="{{ URL('assets/calendar/fullcalendar.min.js') }}"></script>
+        <link href="{{ URL('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ URL('css/app.css') }}" rel="stylesheet">
+        <link href="{{ URL('css/fullcalendar.min.css') }}" rel="stylesheet">
+        <link href="{{ URL('css/fullcalendar.print.css') }}" rel="stylesheet" media='print'>
+        <link href="{{ URL('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+        <script type="text/javascript" src="{{ URL('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/calendar.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/moment-with-locales.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/fullcalendar.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-default">

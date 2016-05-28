@@ -1,10 +1,12 @@
 {
-    "name": "calendar",
-    "version": "1.0.0",
-    "dependencies": {},
-    "devDependencies": {
-        "fullcalendar": "~2.6.1",
-        "moment": ">=2.5.0",
-        "jquery": "1.9.1 - 2"
-    }
+  "name": "calendar",
+  "version": "1.0.0",
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
+  },
+  "devDependencies": {
+    "fullcalendar": "~2.6.1",
+    "moment": ">=2.5.0",
+    "jquery": "1.9.1 - 2"
+  }
 }

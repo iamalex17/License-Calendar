@@ -15,10 +15,15 @@ elixir(function (mix) {
   mix.sass([
     'auth.scss',
     'app.scss',
-    ], 'public/assets/css/app.css')
-    .copy('bower_components/fullcalendar/dist/fullcalendar.min.css', 'public/assets/calendar/')
-    .copy('bower_components/fullcalendar/dist/fullcalendar.min.js', 'public/assets/calendar/')
-    .copy('bower_components/fullcalendar/dist/fullcalendar.print.css', 'public/assets/calendar/')
-    .copy('bower_components/jquery/dist/jquery.min.js', 'public/assets/')
-    .copy('bower_components/moment/min/moment.min.js', 'public/assets/');
+    ], 'public/css/app.css')
+    .copy('bower_components/fullcalendar/dist/fullcalendar.min.css', 'public/css/')
+    .copy('bower_components/fullcalendar/dist/fullcalendar.min.js', 'public/js/')
+    .copy('bower_components/fullcalendar/dist/fullcalendar.print.css', 'public/css/')
+    .copy('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css', 'public/css/')
+    .copy('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css')
+    .copy('bower_components/jquery/dist/jquery.min.js', 'public/js/')
+    .copy('bower_components/moment/min/moment.min.js', 'public/js/')
+    .copy('bower_components/moment/min/moment-with-locales.min.js', 'public/js/')
+    .copy('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', 'public/js/')
+    .copy('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js', 'public/js');
 });
