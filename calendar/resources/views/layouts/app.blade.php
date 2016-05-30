@@ -44,9 +44,12 @@
                 </ul>
             </div>
         </nav>
+
         @yield('calendar')
         @yield('account')
         @yield('delete-account')
         @yield('settings')
+
+        @include('dashboard.event');
     </body>
 </html>
