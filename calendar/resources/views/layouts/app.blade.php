@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
         <script type="text/javascript" src="{{ URL('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL('js/bootstrap.min.js') }}"></script>
-        <script type="text/javascript" src="{{ URL('js/calendar.js') }}"></script>
+        <script type="text/javascript" src="{{ URL('js/app.js') }}"></script>
         <script type="text/javascript" src="{{ URL('js/moment.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL('js/moment-with-locales.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL('js/bootstrap-datetimepicker.min.js') }}"></script>

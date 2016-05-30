@@ -1,0 +1,38 @@
+.auth-html {
+  background: url(/images/background.jpg) no-repeat center center fixed;
+  background-size: cover; }
+
+.container-auth {
+  width: 30%;
+  height: 47%;
+  background-color: #f9f9f9;
+  position: absolute;
+  border: 2px transparent;
+  border-radius: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+  .container-auth .jumbotron {
+    background-color: transparent; }
+  .container-auth .option {
+    margin-top: 1em;
+    font-size: 20px;
+    font-weight: 600; }
+  .container-auth .help-block {
+    margin: 0; }
+  .container-auth .login-redirect, .container-auth .register-redirect {
+    position: relative; }
+  .container-auth .login-redirect {
+    margin: 1.5em; }
+  .container-auth .padding {
+    padding-top: 3.5em; }
+  .container-auth .btn-link {
+    padding-left: 5em; }
+
+.login-redirect, .register-redirect, .option {
+  text-align: center;
+  font-family: "Palanquin", sans-serif; }
+
+/*# sourceMappingURL=auth.css.map */

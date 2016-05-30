@@ -12,10 +12,9 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function (mix) {
-  mix.sass([
-    'auth.scss',
-    'app.scss',
-    ], 'public/css/app.css')
+  mix.sass('app.scss', 'public/css/app.css')
+    .sass('auth.scss', 'public/css/auth.css')
+    .scripts('calendar.js', 'public/js/app.js')
     .copy('bower_components/fullcalendar/dist/fullcalendar.min.css', 'public/css/')
     .copy('bower_components/fullcalendar/dist/fullcalendar.min.js', 'public/js/')
     .copy('bower_components/fullcalendar/dist/fullcalendar.print.css', 'public/css/')

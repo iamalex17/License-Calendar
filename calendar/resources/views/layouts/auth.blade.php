@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Welcome to Calendar</title>
         <link href="{{ URL('css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ URL('css/app.css') }}" rel="stylesheet">
+        <link href="{{ URL('css/auth.css') }}" rel="stylesheet">
     </head>
     <body>
         @yield('content')
