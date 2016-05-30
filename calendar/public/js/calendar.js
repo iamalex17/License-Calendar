@@ -10,13 +10,14 @@ $(document).ready(function () {
         eventLimit: true, // allow "more" link when too many events
         height: $(window).height()*0.90,
         dayClick: function(date, jsEvent, view) {
-            $("#createEvent").modal("show");
+            $("#createEventModal").modal("show");
         },
         eventClick: function(calEvent, jsEvent, view) {
-            // alert('Event: ' + calEvent.title);
-            $("#createEvent").modal("show");
-            var eventTitle = calEvent.title;
-            $(".modal-body #test").val(eventTitle);
+            $("#editEventModal").modal("show");
+            $("form").attr('action',$("#editEvent").attr('action')+ calEvent.id);
+            $(".modal-body #title").val(calEvent.title);
+            $(".modal-body #startDate2").val(calEvent.start['_i']);
+            $(".modal-body #endDate2").val(calEvent.end['_i']);
         }
     });
 
@@ -36,7 +37,17 @@ $(document).ready(function () {
         sideBySide: true
     });
 
+    $('#startDate1').datetimepicker({
+        format: 'YYYY-MM-DD HH:mm',
+        sideBySide: true
+    });
+
     $('#endDate').datetimepicker({
+        format: 'YYYY-MM-DD HH:mm',
+        sideBySide: true
+    });
+
+    $('#endDate2').datetimepicker({
         format: 'YYYY-MM-DD HH:mm',
         sideBySide: true
     });

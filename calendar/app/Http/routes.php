@@ -35,6 +35,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('event/{user}', 'Dashboard\EventController@store');
 
     Route::put('profile/{user}', 'Dashboard\ProfileController@update');
+    Route::put('event/{event}', 'Dashboard\EventController@update');
 
     Route::delete('profile/{user}', 'Dashboard\ProfileController@destroy');
+    Route::delete('event/{event}', 'Dashboard\EventController@destroy');
 });

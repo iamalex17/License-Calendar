@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->string('title')->index('title');
             $table->string('start');
             $table->string('end')->nullable();

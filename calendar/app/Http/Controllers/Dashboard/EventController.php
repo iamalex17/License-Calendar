@@ -44,20 +44,15 @@ class EventController extends Controller
             'title' => 'required|max:255',
             'start_date'  => 'required',
             'end_date'  => 'required',
-            'alert' => 'required'
+            'alerts' => 'required'
         ]);
-        $alert = $request->alert;
-
-        if (!Auth::check()) {
-            echo 'Not logged in!';
-        }
 
         $event->user_id = $request->user()->id;
         $event->title = $request->title;
         $event->start = $request->start_date;
         $event->end = $request->end_date;
 
-        switch ($alert) {
+        switch ($request->alerts) {
             case 0:
                 $event->alert = Event::ALERT_MOMENT;
                 break;
@@ -68,7 +63,7 @@ class EventController extends Controller
                 $event->alert = Event::ALERT_10_MINUTES;
                 break;
             default:
-               echo 'Invalid alert set!';
+               echo 'Invalid alert set!'; die;
         }
 
         $event->save();
@@ -107,7 +102,36 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'start_date'  => 'required',
+            'end_date'  => 'required',
+            'alerts' => 'required'
+        ]);
+
+        $event = Event::findOrFail($id);
+
+        $event->title = $request->title;
+        $event->start = $request->start_date;
+        $event->end = $request->end_date;
+
+        switch ($request->alerts) {
+            case 0:
+                $event->alert = Event::ALERT_MOMENT;
+                break;
+            case 1:
+                $event->alert = Event::ALERT_5_MINUTES;
+                break;
+            case 2:
+                $event->alert = Event::ALERT_10_MINUTES;
+                break;
+            default:
+               echo 'Invalid alert set!'; die;
+        }
+
+        $event->save();
+
+        return back();
     }
 
     /**
@@ -118,6 +142,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::findOrFail($id);
+        $event->delete();
+
+        return back();
     }
 }
