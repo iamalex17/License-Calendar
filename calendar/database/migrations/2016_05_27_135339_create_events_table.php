@@ -19,7 +19,8 @@ class CreateEventsTable extends Migration
             $table->string('title')->index('title');
             $table->string('start');
             $table->string('end')->nullable();
-            $table->integer('alert')->index('alert');
+            $table->string('alert')->index('alert');
+            $table->date('created_at');
         });
     }
 

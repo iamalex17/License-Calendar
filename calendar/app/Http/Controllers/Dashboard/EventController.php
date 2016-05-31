@@ -47,20 +47,23 @@ class EventController extends Controller
             'alerts' => 'required'
         ]);
 
+        $eventCreationDate = explode(" ", $request->start_date);
+
         $event->user_id = $request->user()->id;
         $event->title = $request->title;
         $event->start = $request->start_date;
         $event->end = $request->end_date;
+        $event->created_at = $eventCreationDate[0];
 
         switch ($request->alerts) {
             case 0:
-                $event->alert = Event::ALERT_MOMENT;
+                $event->alert = (new \DateTime($eventCreationDate[1]))->format('H:i');
                 break;
             case 1:
-                $event->alert = Event::ALERT_5_MINUTES;
+                $event->alert = (new \DateTime($eventCreationDate[1]))->modify('-5 minutes')->format('H:i');
                 break;
             case 2:
-                $event->alert = Event::ALERT_10_MINUTES;
+                $event->alert = (new \DateTime($eventCreationDate[1]))->modify('-10 minutes')->format('H:i');
                 break;
             default:
                echo 'Invalid alert set!'; die;
