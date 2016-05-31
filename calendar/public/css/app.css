@@ -14,4 +14,10 @@
 .no-underline:hover {
   text-decoration: none; }
 
+.fc-left {
+  margin-left: 10px; }
+
+.fc-right {
+  margin-right: 10px; }
+
 /*# sourceMappingURL=app.css.map */
