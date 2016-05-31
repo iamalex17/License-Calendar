@@ -7,15 +7,23 @@
             <form action="/event/{{ Auth::user()->id }}" method="POST">
                 {!! csrf_field() !!}
                 <div class="modal-body">
-                    <input type="text" name="title" class="form-control" id="title" placeholder="Event Title" required="required">
-                    <input type="text" name="start_date" class="form-control" id='startDate' placeholder="Event Start Date" required="required">
-                    <input type="text" name="end_date" class="form-control" id='endDate' placeholder="Event End Date" required="required">
-                    <span>Alert</span>
-                    <select name="alerts" class="selectpicker" id="alerts">
-                        <option value="0">At event moment</option>
-                        <option value="1">5 minutes before</option>
-                        <option value="2">10 minutes before</option>
-                    </select>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Event Title" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="start_date" class="form-control" id='startDate' placeholder="Event Start Date" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="end_date" class="form-control" id='endDate' placeholder="Event End Date" required="required">
+                    </div>
+                    <div class="form-group">
+                        <span>Alert</span>
+                        <select name="alerts" class="selectpicker" id="alerts">
+                            <option value="0">At event moment</option>
+                            <option value="1">5 minutes before</option>
+                            <option value="2">10 minutes before</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Undo</button>
@@ -41,15 +49,23 @@
                 {!! csrf_field() !!}
                 {{ method_field('PUT') }}
                 <div class="modal-body">
-                    <input type="text" name="title" class="form-control" id="title" placeholder="Event Title" required="required">
-                    <input type="text" name="start_date" class="form-control" id='startDate2' placeholder="Event Start Date" required="required">
-                    <input type="text" name="end_date" class="form-control" id='endDate2' placeholder="Event End Date" required="required">
-                    <span>Alert</span>
-                    <select name="alerts" class="selectpicker" id="alerts">
-                        <option value="0">At event moment</option>
-                        <option value="1">5 minutes before</option>
-                        <option value="2">10 minutes before</option>
-                    </select>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Event Title" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="start_date" class="form-control" id='startDate2' placeholder="Event Start Date" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="end_date" class="form-control" id='endDate2' placeholder="Event End Date" required="required">
+                    </div>
+                    <div class="form-group">
+                        <span>Alert</span>
+                        <select name="alerts" class="selectpicker" id="alerts">
+                            <option value="0">At event moment</option>
+                            <option value="1">5 minutes before</option>
+                            <option value="2">10 minutes before</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Undo</button>
