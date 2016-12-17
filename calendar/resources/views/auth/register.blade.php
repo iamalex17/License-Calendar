@@ -8,7 +8,8 @@
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="full-name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" id="full-name" placeholder="Full name" value="{{ old('name') }}" required="required">@if ($errors->has('name'))
+                <input type="text" name="name" class="form-control" id="full-name" placeholder="Full name" value="{{ old('name') }}" required="required">
+                @if ($errors->has('name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
                     </span>

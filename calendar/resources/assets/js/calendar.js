@@ -13,6 +13,10 @@ $(document).ready(function () {
             $("#createEventModal").modal("show");
         },
         eventClick: function(calEvent, jsEvent, view) {
+            if (calEvent._end == null) {
+                $(".modal-body #endDate2").val(calEvent.start['_i']);
+            }
+
             $("#editEventModal").modal("show");
             $("form").attr('action',$("#editEvent").attr('action')+ calEvent.id);
             $(".modal-body #title").val(calEvent.title);
@@ -21,33 +25,16 @@ $(document).ready(function () {
         }
     });
 
-    if(calendar) {
-        $(window).resize(function() {
-            var calHeight = $(window).height()*0.90;
-            $('#calendar').fullCalendar('option', 'height', calHeight);
-        });
-    };
-
     $('#myModal').on('shown.bs.modal', function () {
         $('#myInput').focus();
     });
 
-    $('#startDate').datetimepicker({
+    $('#startDate,#startDate2').datetimepicker({
         format: 'YYYY-MM-DD HH:mm',
         sideBySide: true
     });
 
-    $('#startDate1').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm',
-        sideBySide: true
-    });
-
-    $('#endDate').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm',
-        sideBySide: true
-    });
-
-    $('#endDate2').datetimepicker({
+    $('#endDate,#endDate2').datetimepicker({
         format: 'YYYY-MM-DD HH:mm',
         sideBySide: true
     });

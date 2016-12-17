@@ -47,7 +47,27 @@ class EventController extends Controller
             'alerts' => 'required'
         ]);
 
+        $currentDay = (new \DateTime())->getTimestamp();
         $eventCreationDate = explode(" ", $request->start_date);
+        $existingEventWithTitle = Event::where('title', $request->title)->first();
+        $existingEventWithDate = Event::where('end', $request->end_date)
+                                    ->orWhere('start', $request->start_date)->first();
+
+        if (strtotime($request->start_date) < $currentDay) {
+            echo 'Invalid date!'; die;
+        }
+
+        if (strtotime($request->end_date) < $currentDay) {
+            echo 'Invalid date!'; die;
+        }
+
+        if ($existingEventWithTitle) {
+            echo 'An event with that name exists!'; die;
+        }
+
+        if ($existingEventWithDate) {
+            echo 'An event at that time already exists!'; die;
+        }
 
         $event->user_id = $request->user()->id;
         $event->title = $request->title;
@@ -112,7 +132,31 @@ class EventController extends Controller
             'alerts' => 'required'
         ]);
 
+        $currentDay = (new \DateTime())->getTimestamp();
         $event = Event::findOrFail($id);
+        $existingEventWithTitle = Event::where('title', $request->title)
+                                    ->where('id', '!=', $id)
+                                    ->first();
+        $existingEventWithDate = Event::where('end', $request->end_date)
+                                    ->orWhere('start', $request->start_date)
+                                    ->where('id', '!=', $id)
+                                    ->first();
+
+        if (strtotime($request->start_date) < $currentDay) {
+            echo 'Invalid date!'; die;
+        }
+
+        if (strtotime($request->end_date) < $currentDay) {
+            echo 'Invalid date!'; die;
+        }
+
+        if ($existingEventWithTitle) {
+            echo 'An event with that name exists!'; die;
+        }
+
+        if ($existingEventWithDate) {
+            echo 'An event at that time already exists!'; die;
+        }
 
         $event->title = $request->title;
         $event->start = $request->start_date;
@@ -145,7 +189,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event = Event::findOrFail($id);
+        $event = Event::where('id', $id)
+                    ->where('user_id', Auth::user()->id);
         $event->delete();
 
         return back();
